@@ -7,7 +7,7 @@ A secure RESTful API for managing notes, built with Spring Boot and Spring Secur
 - User authentication and authorization
 - JWT-based authentication
 - CRUD operations for notes
-- MySQL database
+- H2 in-memory database
 - Exception handling
 - Input validation
 
@@ -15,13 +15,13 @@ A secure RESTful API for managing notes, built with Spring Boot and Spring Secur
 
 - Java 21 or higher
 - Maven 3.6.0 or higher
-- MySQL 8.0 or higher
+- H2 Database (in-memory)
 
 ## Tech Stack
 
 - **Backend Framework**: Spring Boot 3.5.5
 - **Security**: Spring Security with JWT
-- **Database**: MySQL 8.0+
+- **Database**: H2 (in-memory)
 - **Build Tool**: Maven
 - **Java Version**: 21
 
@@ -118,35 +118,13 @@ DELETE /api/notes/{id}
 Authorization: Bearer <token>
 ```
 
-## Database Configuration
+## Database
 
-The application uses MySQL database. Before running the application, make sure to:
-
-1. Create a MySQL database (default name: `notes_db`)
-2. Update the database configuration in `src/main/resources/application.properties` with your MySQL credentials:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/notes_db
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-```
-
-### Required MySQL Configuration
-
-Make sure your MySQL server has the following configuration:
-- Default authentication plugin: `mysql_native_password` or `caching_sha2_password`
-- Timezone settings properly configured
-
-## Running with Docker (Optional)
-
-If you prefer to run MySQL in a Docker container:
-
-```bash
-docker run --name mysql-notes -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=notes_db -p 3306:3306 -d mysql:8.0
-```
+The application uses H2 in-memory database by default. You can access the H2 console at:
+- URL: `http://localhost:8080/h2-console`
+- JDBC URL: `jdbc:h2:mem:notesdb`
+- Username: `sa`
+- Password: (leave empty)
 
 ## Security
 
