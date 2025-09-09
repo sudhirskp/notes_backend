@@ -21,7 +21,7 @@ A secure RESTful API for managing notes, built with Spring Boot and Spring Secur
 
 - **Backend Framework**: Spring Boot 3.5.5
 - **Security**: Spring Security with JWT
-- **Database**: H2 (in-memory)
+- **Database**: MySql
 - **Build Tool**: Maven
 - **Java Version**: 21
 
