@@ -2,6 +2,12 @@
 
 A secure RESTful API for managing notes, built with Spring Boot and Spring Security.
 
+# User DB
+![User-DB](src/main/resources/Screenshot/user-db.png)
+
+# Notes DB
+![Notes-DB](src/main/resources/Screenshot/notes-db.png)
+
 ## Features
 
 - User authentication and authorization
